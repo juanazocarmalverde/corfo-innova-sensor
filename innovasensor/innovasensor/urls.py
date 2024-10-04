@@ -24,4 +24,10 @@ urlpatterns = [
     path('api/', include('employee.urls')),
     path('api/', include('user_departments.urls')),
     path('api/', include('user_roles.urls')),
+    path('api/', include('chart_focus.urls')),
+    path('api/', include('chart_intervieweds.urls')),
+    path('api/', include('chart_requirements.urls')),
+    path('api/', include('chart_types.urls')),
+    
+    
 ]

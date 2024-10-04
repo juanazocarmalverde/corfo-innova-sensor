@@ -47,6 +47,10 @@ INSTALLED_APPS = [
     'employee',
     'user_departments',
     'user_roles',
+    'chart_focus',
+    'chart_intervieweds',
+    'chart_requirements',
+    'chart_types'
 ]
 
 REST_FRAMEWORK = {
