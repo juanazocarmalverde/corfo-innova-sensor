@@ -19,6 +19,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/auth/', include('dj_rest_auth.urls')),  # Endpoints para login, logout y password reset
+    path('api/auth/registration/', include('dj_rest_auth.registration.urls')),  # Endpoints para registro de usuario
     path('api/', include('employee.urls')),
     path('api/', include('user_departments.urls')),
     path('api/', include('user_roles.urls')),

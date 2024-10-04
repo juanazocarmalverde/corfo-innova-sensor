@@ -1,5 +1,7 @@
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
 from rest_framework import status
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, authentication_classes, permission_classes
 from rest_framework.response import Response
 from rest_framework import generics
 from .models import Employee
@@ -7,6 +9,8 @@ from .serializers import EmployeeSerializer
 
 
 @api_view(['GET', 'POST'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
 def employee_list(request):
     # Obtener todos los empleados
     if request.method == 'GET':
@@ -24,6 +28,8 @@ def employee_list(request):
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
 def employee_detail(request, pk):
     try:
         employee = Employee.objects.get(pk=pk)
