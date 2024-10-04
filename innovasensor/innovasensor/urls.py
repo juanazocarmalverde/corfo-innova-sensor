@@ -28,5 +28,8 @@ urlpatterns = [
     path('api/', include('innovasensorapp.employee.urls')),
     path('api/', include('innovasensorapp.user_department.urls')),
     path('api/', include('innovasensorapp.user_role.urls')),
+    path('api/', include('innovasensorapp.project_fails.urls')),
+    path('api/', include('innovasensorapp.projects.urls')),
+    path('api/', include('innovasensorapp.sensor_charts.urls')),
     
 ]
