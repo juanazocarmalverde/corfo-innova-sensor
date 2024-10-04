@@ -1,0 +1,72 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.db
+*.sqlite3
+
+# If you're using SQLite
+*.sqlite3
+
+# If you're using Postgres:
+*.pgdata
+
+# Media folder (user-uploaded content)
+media/
+
+# Static folder (generated static files)
+staticfiles/
+
+# Django migrations
+*/migrations/*
+
+# Django settings files
+*.env
+.env.*
+
+# Pytest cache and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Unit test / coverage reports
+*.cover
+coverage.xml
+*.log
+
+# Virtual environments
+venv/
+env/
+
+# IDE specific files
+.idea/
+.vscode/
+
+# Egg files
+*.egg-info/
+*.egg
+
+# Celery pid and beat schedule files
+celerybeat-schedule
+celerybeat.pid
+
+# MacOS and Linux system files
+.DS_Store
+Thumbs.db
+
+# PIP dependency folders
+pip-wheel-metadata/
+pip-log.txt
+
+# Django translations
+*.mo
+
+# Build files
+build/
+dist/
