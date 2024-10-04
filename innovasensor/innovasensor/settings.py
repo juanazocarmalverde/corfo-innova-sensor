@@ -44,13 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'dj_rest_auth',
-    'employee',
-    'user_departments',
-    'user_roles',
-    'chart_focus',
-    'chart_intervieweds',
-    'chart_requirements',
-    'chart_types'
+    'innovasensorapp'
 ]
 
 REST_FRAMEWORK = {

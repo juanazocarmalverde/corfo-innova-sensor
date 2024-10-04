@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ChartTypesConfig(AppConfig):
+class InnovasensorappConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'chart_types'
+    name = 'innovasensorapp'
