@@ -13,7 +13,7 @@ from .serializers import ChartFocusSerializer
 @permission_classes([IsAuthenticated])
 def chart_focus_list(request):
     if request.method == 'GET':
-        chart_focus = ChartFocus.objects.all()
+        chart_focus = ChartFocus.objects.all() 
         serializer = ChartFocusSerializer(chart_focus, many=True)
         return Response(serializer.data)
     

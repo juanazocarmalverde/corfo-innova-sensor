@@ -12,7 +12,7 @@ from .serializers import SensorChartSerializer
 @api_view(['GET', 'POST'])
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])
-def sensor_charts_list(request):
+def sensor_chart_list(request):
     # Obtener todos los empleados
     if request.method == 'GET':
         sensor_chart = SensorChart.objects.all()
@@ -27,11 +27,25 @@ def sensor_charts_list(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def sensor_chart_list_by_project(request, project_id):
+    # Obtener todos los empleados
+    try:
+        sensor_chart = SensorChart.objects.filter(project_id=project_id)
+    except SensorChart.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    # Obtener un empleado por ID
+    if request.method == 'GET':
+        serializer = SensorChartSerializer(sensor_chart, many=True)
+        return Response(serializer.data)
 
 @api_view(['GET', 'PUT', 'DELETE'])
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])
-def sensor_charts_detail(request, pk):
+def sensor_chart_detail(request, pk):
     try:
         sensor_chart = SensorChart.objects.get(pk=pk)
     except SensorChart.DoesNotExist:

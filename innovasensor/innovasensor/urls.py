@@ -22,14 +22,15 @@ urlpatterns = [
     path('api/auth/', include('dj_rest_auth.urls')),  # Endpoints para login, logout y password reset
     path('api/auth/registration/', include('dj_rest_auth.registration.urls')),  # Endpoints para registro de usuario
     path('api/', include('innovasensorapp.chart_focus.urls')),
-    path('api/', include('innovasensorapp.chart_interviewds.urls')),
+    path('api/', include('innovasensorapp.chart_interviewed.urls')),
     path('api/', include('innovasensorapp.chart_requirement.urls')),
     path('api/', include('innovasensorapp.chart_type.urls')),
     path('api/', include('innovasensorapp.employee.urls')),
     path('api/', include('innovasensorapp.user_department.urls')),
     path('api/', include('innovasensorapp.user_role.urls')),
-    path('api/', include('innovasensorapp.project_fails.urls')),
-    path('api/', include('innovasensorapp.projects.urls')),
-    path('api/', include('innovasensorapp.sensor_charts.urls')),
+    path('api/', include('innovasensorapp.project_fail.urls')),
+    path('api/', include('innovasensorapp.project.urls')),
+    path('api/', include('innovasensorapp.sensor_chart.urls')),
+     path('api/', include('innovasensorapp.user.urls')),
     
 ]
