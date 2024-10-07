@@ -5,7 +5,7 @@ from rest_framework.decorators import api_view, authentication_classes, permissi
 from rest_framework.response import Response
 from rest_framework import generics
 from innovasensorapp.models import Project
-from .serializers import ProjectSerializer
+from .serializers import ProjectSerializer, GETProjectSerializer
 
 
 
@@ -16,7 +16,7 @@ def project_list(request):
     # Obtener todos los empleados
     if request.method == 'GET':
         project = Project.objects.all()
-        serializer = ProjectSerializer(project, many=True)
+        serializer = GETProjectSerializer(project, many=True)
         return Response(serializer.data)
 
     # Crear un nuevo empleado
@@ -39,7 +39,7 @@ def project_detail(request, pk):
 
     # Obtener un empleado por ID
     if request.method == 'GET':
-        serializer = ProjectSerializer(project)
+        serializer = GETProjectSerializer(project)
         return Response(serializer.data)
 
     # Actualizar un empleado

@@ -5,7 +5,7 @@ from rest_framework.decorators import api_view, authentication_classes, permissi
 from rest_framework.response import Response
 from rest_framework import generics
 from innovasensorapp.models import SensorChart
-from .serializers import SensorChartSerializer
+from .serializers import SensorChartSerializer, GETSensorChartSerializer
 
 
 
@@ -16,7 +16,7 @@ def sensor_chart_list(request):
     # Obtener todos los empleados
     if request.method == 'GET':
         sensor_chart = SensorChart.objects.all()
-        serializer = SensorChartSerializer(sensor_chart, many=True)
+        serializer = GETSensorChartSerializer(sensor_chart, many=True)
         return Response(serializer.data)
 
     # Crear un nuevo empleado
