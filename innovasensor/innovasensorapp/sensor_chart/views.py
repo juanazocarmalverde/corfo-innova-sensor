@@ -39,7 +39,7 @@ def sensor_chart_list_by_project(request, project_id):
 
     # Obtener un empleado por ID
     if request.method == 'GET':
-        serializer = SensorChartSerializer(sensor_chart, many=True)
+        serializer = GETSensorChartSerializer(sensor_chart, many=True)
         return Response(serializer.data)
 
 @api_view(['GET', 'PUT', 'DELETE'])
@@ -53,7 +53,7 @@ def sensor_chart_detail(request, pk):
 
     # Obtener un empleado por ID
     if request.method == 'GET':
-        serializer = SensorChartSerializer(sensor_chart)
+        serializer = GETSensorChartSerializer(sensor_chart)
         return Response(serializer.data)
 
     # Actualizar un empleado
